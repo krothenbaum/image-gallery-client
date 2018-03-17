@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Image from '../image/';
+import './main.css';
 
 class Gallery extends Component {
   constructor(props) {
@@ -33,13 +35,12 @@ class Gallery extends Component {
     console.log(this.state.images);
     const images = this.state.images;
     return (
-      <div className="Gallery">
+      <div className="gallery">
         {images.map(image =>
-          <div key={image._id}>
-            <p>{image.fileName}</p>
+          <div key={image._id} className='item'>
+            <Image fileName={image.fileName} />
           </div>
         )}
-        <p>Gallery</p>
       </div>
     );
   }
