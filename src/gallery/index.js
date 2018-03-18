@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Image from '../image/';
-import './main.css';
+import './gallery.css';
 
 class Gallery extends Component {
   constructor(props) {
