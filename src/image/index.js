@@ -6,7 +6,7 @@ class Image extends Component {
   render() {
 
     return (
-      <img src={'/images/' + this.props.fileName} alt=""/>
+      <img src={'https://jar-image-store.s3.us-west-2.amazonaws.com/' + this.props.fileName} alt=""/>
     );
   }
 }
