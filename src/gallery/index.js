@@ -38,7 +38,7 @@ class Gallery extends Component {
       <div className="gallery">
         {images.map(image =>
           <div key={image._id} className='item'>
-            <Image fileName={image.fileName} />
+            <Image fileName={image.fileName} thumbName={image.thumbName}/>
           </div>
         )}
       </div>
