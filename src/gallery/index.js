@@ -31,13 +31,16 @@ class Gallery extends Component {
     return body;
   };
 
+  randomSpan = () => {
+    return Math.floor(Math.random() * 3) + 1;
+  }
+
   render() {
-    console.log(this.state.images);
     const images = this.state.images;
     return (
       <div className="gallery">
         {images.map(image =>
-          <div key={image._id} className='item'>
+          <div key={image._id} className={`item vh${this.randomSpan()}`}>
             <Image fileName={image.fileName} thumbName={image.thumbName}/>
           </div>
         )}

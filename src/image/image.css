@@ -1,5 +1,5 @@
 img {
-  animation: fadein 3s;
+
   grid-column: 1 / -1;
   grid-row: 1 / -1;
   width: 100%;
@@ -7,7 +7,3 @@ img {
   object-fit: cover;
 }
 
-@keyframes fadein {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}

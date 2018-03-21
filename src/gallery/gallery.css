@@ -1,11 +1,11 @@
-* {
-  box-sizing: border-box;
-}
+
 
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, 300px);
   grid-auto-rows: 300px;
+  grid-auto-flow: dense;
+  grid-gap: 16px;
 }
 
 .item {
@@ -13,6 +13,32 @@
   display: grid;
   grid-template-columns: 1;
   grid-template-rows: 1;
+  border: 10px solid white;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+  animation: fadein 3s;
 }
+
+@keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* .item.vh2 {
+  grid-row: span 2;
+  grid-column: span 2;
+}
+
+.item.vh3 {
+  grid-row: span 3;
+  grid-column: span 3;
+}
+
+.item.h2 {
+
+}
+
+.item.h3 {
+
+} */
 
 
