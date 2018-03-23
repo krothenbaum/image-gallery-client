@@ -1,45 +1,34 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class UploadForm extends Component {
   constructor(props) {
     super(props);
-    this.state ={
+    this.state = {
       file: null
-    }
+    };
   }
 
-  fileUpload = async (file) => {
+  fileUpload = async file => {
     console.log("UPLOADING!");
     // console.log(file);
-    const url = '/upload';
+    const url = "/upload";
     const formData = new FormData();
-    formData.append('image',file)
+    formData.append("image", file);
     const config = {
-        method: 'POST',
-        // headers: {
-        //     'content-type': 'multipart/form-data'
-        // },
-        body: formData
-    }
+      method: "POST",
+      body: formData
+    };
     return await fetch(url, config);
-  }
+  };
 
-  onFormSubmit = async (e) => {
+  onFormSubmit = async e => {
     e.preventDefault();
+    await this.fileUpload(this.state.file);
+  };
 
-    const response = await this.fileUpload(this.state.file)
-    console.log(response.data);
-    // console.log(this.refs)
-    // console.log(this.refs.file);
-    // fetch('upload/', {
-    //   method: "POST",
-    //   body: file
-    // });
-  }
-
-  onChange = (e) => {
-    this.setState({ file:e.target.files[0] })
-  }
+  onChange = e => {
+    this.setState({ file: e.target.files[0] });
+  };
 
   render() {
     return (
@@ -48,9 +37,8 @@ class UploadForm extends Component {
         <input type="file" onChange={this.onChange} />
         <button type="submit">Upload</button>
       </form>
-    )
+    );
   }
-
 }
 
 export default UploadForm;

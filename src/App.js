@@ -1,16 +1,24 @@
-import React, { Component } from 'react';
-import Gallery from './gallery/';
-import UploadForm from './form';
-// import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Gallery from "./gallery/";
+import NavBar from "./nav-bar";
+import "./App.css";
+import UploadForm from "./form";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <UploadForm />
-        <Gallery />
-      </div>
+      <Router>
+        <div className="App">
+          <header>
+            <NavBar />
+          </header>
+          <main>
+            <Route exact path="/" component={Gallery} />
+            <Route exact path="/upload" component={UploadForm} />
+          </main>
+        </div>
+      </Router>
     );
   }
 }
